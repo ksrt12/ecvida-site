@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ecvida/static/css/main.d1b134d3.css",
+    "main.js": "/ecvida/static/js/main.d3273ed5.js",
+    "static/js/787.0944afbc.chunk.js": "/ecvida/static/js/787.0944afbc.chunk.js",
+    "index.html": "/ecvida/index.html",
+    "main.d1b134d3.css.map": "/ecvida/static/css/main.d1b134d3.css.map",
+    "main.d3273ed5.js.map": "/ecvida/static/js/main.d3273ed5.js.map",
+    "787.0944afbc.chunk.js.map": "/ecvida/static/js/787.0944afbc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1b134d3.css",
+    "static/js/main.d3273ed5.js"
+  ]
+}
