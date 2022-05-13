@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import "materialize-css";
+import { myRoutes } from "./routes";
+import { BrowserRouter } from "react-router-dom";
+import { useAuth } from "./hooks/useAuth";
+import AuthContext from "./context/AuthContext";
+// import HostContext from "./context/HostContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { token, login, logout, flatId, userId, flats } = useAuth();
+    const isAuthenticated = !!token;
+    // const HOST = "https://ecvida.wellsoft.pro";
+    const routes = myRoutes(isAuthenticated);
+    return (
+        // <HostContext.Provider value={{ HOST }}>
+        <AuthContext.Provider value={{
+            token, login, logout, flatId, userId, flats, isAuthenticated
+        }}>
+            <BrowserRouter>
+                <div className="container">
+                    {routes}
+                </div>
+            </BrowserRouter>
+        </AuthContext.Provider>
+        // </HostContext.Provider>
+    );
 }
 
 export default App;
